@@ -1,0 +1,141 @@
+---
+import LogoMain from "../components/LogoMain.astro";
+---
+<style>
+    [x-cloak] { display: none !important; }
+</style>
+<header 
+    x-data="{ scrolled: false }"
+    x-on:scroll.window="scrolled = window.pageYOffset > 100" 
+    class="fixed flex justify-center top-6 left-0 w-full z-10">
+    <nav
+        x-bind:class="{ 'w-[95%] lg:w-11/12 bg-bluehantik-800': scrolled, 'bg-blue-950/0': !scrolled }" 
+        class="relative hidden md:flex justify-between items-center w-3/4 lg:w-1/2 px-8 py-4 rounded-full backdrop-blur-md duration-500"
+    >
+        <menu class="flex justify-start gap-x-4 lg:gap-x-8 text-white">
+            <li
+                class="cursor-pointer" 
+                @click="$refs.servicios.scrollIntoView({ behavior: 'smooth'})"
+            >
+                Portafolio
+            </li>
+            <li
+                class="cursor-pointer"
+                @click="$refs.servicios.scrollIntoView({ behavior: 'smooth'})"
+            >
+                Enfoque
+            </li>
+        </menu>
+        <div 
+            class="w-[100px] lg:w-[150px]"
+            @click="$refs.inicio.scrollIntoView({ behavior: 'smooth'})"
+        >
+            <LogoMain />
+        </div>
+        <menu class="flex justify-end gap-x-4 lg:gap-x-8 text-white z-10">
+            <li 
+                class="cursor-pointer"
+                @click="$refs.opiniones.scrollIntoView({ behavior: 'smooth'})"
+            >
+                Experiencias
+            </li>
+            <li 
+                class="cursor-pointer"
+                @click="$refs.tecnologia.scrollIntoView({ behavior: 'smooth', block: 'start', duration: 3600 })"
+            >
+                T&eacute;cnologias
+            </li>
+        </menu>                
+    </nav>
+    <button
+        @click="openMenu = !openMenu"
+        :aria-expanded="openMenu"
+        aria-controls="mobile-navigation"
+        aria-label="Abrir men&uacute;"
+        class="absolute flex md:hidden justify-center items-center w-8 right-2 aspect-square cursor-pointer text-bluehantik-500 rounded-full bg-bluehantik-900 -translate-x-2"
+    >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" class="w-4 aspect-square">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M4 6h16" /><path d="M7 12h13" />
+            <path d="M10 18h10" />
+        </svg>
+    </button>
+</header>
+<nav
+    id="mobile-navigation"
+    class="fixed top-0 right-0 bottom-0 left-0 trans z-50"
+    :class="openMenu ? 'backdrop-blur-sm visible' : 'backdrop-blur-0 invisible'"
+    x-cloak
+>
+    <menu
+        :class="openMenu ? 'translate-x-0' : 'translate-x-full'"
+        class="absolute top-0 right-0 bottom-0 w-10/12 py-4 bg-white drop-shadow-2xl shadow-2xl shadow-slate-950/10 z-10 transition-all ease-in-out duration-500"
+    >
+        <li
+            @click="$refs.servicios.scrollIntoView({ behavior: 'smooth'})"
+            class="border-b border-inherit"
+        >
+            <button class="flex justify-start items-center gap-x-2 p-4 text-black hover:text-blue-900 cursor-pointer" aria-label="Ir hasta apartado servicios">					  
+                <span>Servicios</span>
+            </button>
+        </li>
+        <li
+            @click="$refs.servicios.scrollIntoView({ behavior: 'smooth'})"
+            class="border-b border-inherit"
+        >
+            <button class="flex justify-start items-center gap-x-2 p-4 text-black hover:text-blue-900 cursor-pointer" aria-label="Ir hasta apartado Enfoque">					  
+                <span>Enfoque</span>
+            </button>
+        </li>
+        <li
+            @click="$refs.opiniones.scrollIntoView({ behavior: 'smooth'})"
+            class="border-b border-inherit"
+        >
+            <button class="flex justify-start items-center gap-x-2 p-4 text-black hover:text-blue-900 cursor-pointer" aria-label="Ir hasta apartado Experiencias">					  
+                <span>Experiencias</span>
+            </button>
+        </li>
+        <li 
+            @click="$refs.tecnologia.scrollIntoView({ behavior: 'smooth'})"
+            class="border-b border-inherit"
+        >
+            <button class="flex justify-start items-center gap-x-2 p-4 text-black hover:text-blue-900 cursor-pointer" aria-label="Ir hasta Tecnolog&iacute;as usadas">						  
+                <span>Tecnolog&iacute;as</span>
+            </button>
+        </li>
+        <li 
+            @click="$refs.formulario.scrollIntoView({ behavior: 'smooth'})"
+            class="border-b border-inherit"
+        >
+            <button class="flex justify-start items-center gap-x-2 p-4 text-black hover:text-blue-900 cursor-pointer" aria-label="Ir hasta formulario de contacto">
+                <span>Cont&aacute;ctanos</span>
+            </button>
+        </li>
+        <div class="absolute flex justify-end gap-6 w-full pr-2 bottom-4 right-0">
+            <a href="https://www.facebook.com" class="flex justify-center items-center w-8 aspect-square rounded-full text-white bg-bluehantik-800 group-hover:bg-sky-400 duration-300" title="Hantik facebook">
+                <img src="images/social/facebook.svg" class="w-5 aspect-square" loading="lazy" alt="Hantik facebook">
+            </a> 
+            <a href="https://www.threads.net/" class="flex justify-center items-center w-8 aspect-square rounded-full text-white bg-bluehantik-800 group-hover:bg-sky-400 duration-300" title="Hantik threads">
+                <img src="images/social/threads.svg" class="w-5 aspect-square" loading="lazy" alt="Hantik threads">
+            </a> 
+            <a href="https://www.instagram.com" class="flex justify-center items-center w-8 aspect-square rounded-full text-white bg-bluehantik-800 group-hover:bg-sky-400 duration-300" title="Hantik instagram">
+                <img src="images/social/instagram.svg" class="w-4 aspect-square" loading="lazy" alt="Hantik instagram">
+            </a> 
+            <a href="https://www.tiktok.com" class="flex justify-center items-center w-8 aspect-square rounded-full text-white bg-bluehantik-800 group-hover:bg-sky-400 duration-300" title="Hantik tiktok">
+                <img src="images/social/tiktok.svg" class="w-4 aspect-square" loading="lazy" alt="Hantik tiktok">
+            </a> 
+            <a href="https://www.linkedin.com" class="flex justify-center items-center w-8 aspect-square rounded-full text-white bg-bluehantik-800 group-hover:bg-sky-400 duration-300" title="Hantik linkedin">
+                <img src="images/social/linkedin.svg" class="w-4 aspect-square" loading="lazy" alt="Hantik linkedin">
+            </a> 
+        </div>
+    </menu>
+    <button class="absolute top-0 right-0 bottom-0 left-0"
+    @click="openMenu = !openMenu"
+    :aria-expanded="openMenu" aria-controls="mobile-navigation" aria-label="Cerrar Menu">
+        <div class="absolute flex justify-center items-center top-6 left-3 w-8 h-8 rounded-full bg-blue-950">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 stroke-slate-50">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </div>
+    </button>
+</nav>

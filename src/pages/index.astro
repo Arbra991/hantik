@@ -1,0 +1,462 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import GeneralButton from '../components/GeneralButton.astro';
+import CardOpinion from '../components/CardOpinion.astro';
+import Opinions from "../components/opinion.json";
+
+---
+
+<Layout title="Hantik Group">
+	<main>
+		<!-- header -->
+		<section 
+			x-ref="inicio"
+			class="relative w-full h-screen">
+			<picture>
+				<source
+					media="(orientation: portrait)"
+					srcset="images/gradient-header-mobile.webp"
+					sizes="(max-width: 767.9808px) 700px">
+				<img src="images/gradient-header.webp" class="w-full h-full" loading="lazy" alt="Fondo degradado azul">
+			</picture>
+			<div class="absolute flex justify-center items-center top-0 right-0 bottom-0 left-0">
+				<div class="flex flex-col items-center gap-y-14 w-11/12">
+					<h1 class="flex flex-col text-white text-6xl md:text-9xl font-m text-center">
+						<span class="text-2xl md:text-4xl tracking-widest">Ofrecemos soluciones</span>
+						<span class="font-bold tracking-wider">digitales</span>
+					</h1>
+					<div class="text-white text-center max-w-3xl">
+						<p class="text-white/70">Que ayudan a las empresas a cumplir con las regulaciones, mejorar su rendimiento, proteger sus datos y <span class="text-white font-bold">alcanzar sus objetivos.</span></p>
+					</div>
+					<GeneralButton>
+						Solicitar una demostraci&oacute;n
+					</GeneralButton>
+				</div>
+			</div>
+			<img src="images/cloud.webp" class="absolute w-36 md:w-64 bottom-0 left-1/2 -translate-x-1/2 translate-y-1/3 md:translate-y-1/2 z-[2]" alt="icon cloud">
+		</section>
+
+		<!-- Intro empresa -->
+		<section class="relative w-full z-[1]">
+			<picture>
+				<source
+					media="(orientation: portrait)"
+					srcset="images/gradient-medium-mobile.webp"
+					sizes="(max-width: 767.9808px) 700px">
+				<img src="images/gradient-medium.webp" class="absolute w-full h-full" loading="lazy" alt="Fondo degradado azul">
+			</picture>
+			<!-- Imagen edificios-->
+			<picture>
+				<source
+					media="(orientation: portrait)"
+					srcset="images/estructura-mobil.webp"
+					sizes="(max-width: 767.9808px) 700px">
+				<img src="images/estructura.webp" class="w-full h-auto object-cover object-top top-0 right-0 -translate-y-[10%]" loading="lazy" alt="Gr&aacute;fico de edificios">
+			</picture>
+			<div class="absolute hidden md:flex justify-center items-start top-0 right-0 bottom-0 left-0 translate-y-[10%]">
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 text-center w-11/12">
+					<div class="p-4 lg:p-12 rounded-xl bg-slate-100 backdrop-blur-lg">
+						<h2 class="min-h-[54px] lg:min-h-min mb-4 text-blue-600 text-2xl md:text-xl lg:text-4xl font-m font-bold">Experiencia y Especializaci&oacute;n</h2>
+						<p class="text-blue-400 text-xs">Con a&ntilde;os de experiencia en el campo de la tecnolog&iacute;a y soluciones digitales, somos expertos en  an&aacute;lisis de sitios web, auditor&iacute;as y capacitaciones.</p>
+					</div>
+					<div class="p-4 lg:p-12 rounded-xl border border-white/10 bg-white/10 backdrop-blur-[2px]">
+						<h2 class="min-h-[54px] lg:min-h-min mb-4 text-white text-2xl md:text-xl lg:text-4xl font-m font-bold">Enfoque Integral</h2>
+						<p class="text-cyan-400 text-xs">No somos una agencia convencional. Ofrecemos resultados alcanzables e integrales que abarcan desde el an&aacute;lisis inicial hasta la implementaci&oacute;n y el seguimiento. Garantizamos que cada aspecto de tu estrategia digital est&eacute; alineado y optimizado.</p>
+					</div>
+					<div class="p-4 lg:p-12 rounded-xl border border-white/10 bg-white/10 backdrop-blur-[2px]">
+						<h2 class="min-h-[54px] lg:min-h-min mb-4 text-white text-2xl md:text-xl lg:text-4xl font-m font-bold">Resultados Comprobados</h2>
+						<p class="text-cyan-200 text-xs">Hemos trabajado con empresas l&iacute;deres que han obtenido casos de &eacute;xito con nuestra ayuda (Definir unas tres con URL al sitio). Nuestros resultados hablan por s&iacute; mismos. No solo te proporcionamos servicios, sino que te acompa&ntilde;amos en el camino hacia el &eacute;xito digital.</p>
+					</div>
+				</div>
+			</div>
+			<div class="absolute block bottom-0 left-0 w-full h-[10%] bg-white"></div>
+		</section>
+
+		<!-- servicios -->
+		<section 
+			x-ref="servicios"
+			class="relative bg-white"
+		>
+			<div class="flex flex-col justify-center items-center gap-y-12 top-0 right-0 bottom-0 left-0 z-[1]">
+				<div class="flex justify-center items-start top-0 right-0 bottom-0 left-0">
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12 w-9/12 lgw-11/12 text-center">
+						<div class="lg:p-12 rounded-xl">
+							<h2 class="min-h-[54px] lg:min-h-min mb-4 text-blue-600 text-2xl md:text-xl lg:text-4xl font-m font-bold">Experiencia y Especializaci&oacute;n</h2>
+							<p class="text-blue-400 text-xs lg:text-base">Con a&ntilde;os de experiencia en el campo de la tecnolog&iacute;a y soluciones digitales, somos expertos en  an&aacute;lisis de sitios web, auditor&iacute;as y capacitaciones.</p>
+						</div>
+						<div class="lg:p-12 rounded-xl">
+							<h2 class="min-h-[54px] lg:min-h-min mb-4 text-blue-600 text-2xl md:text-xl lg:text-4xl font-m font-bold align-bottom">Enfoque Integral</h2>
+							<p class="text-blue-400 text-xs lg:text-base">No somos una agencia convencional. Ofrecemos resultados alcanzables e integrales que abarcan desde el an&aacute;lisis inicial hasta la implementaci&oacute;n y el seguimiento. Garantizamos que cada aspecto de tu estrategia digital est&eacute; alineado y optimizado.</p>
+						</div>
+						<div class="lg:p-12 rounded-xl">
+							<h2 class="min-h-[54px] lg:min-h-min mb-4 text-blue-600 text-2xl md:text-xl lg:text-4xl font-m font-bold">Resultados Comprobados</h2>
+							<p class="text-blue-400 text-xs lg:text-base">Hemos trabajado con empresas l&iacute;deres que han obtenido casos de &eacute;xito con nuestra ayuda (Definir unas tres con URL al sitio). Nuestros resultados hablan por s&iacute; mismos. No solo te proporcionamos servicios, sino que te acompa&ntilde;amos en el camino hacia el &eacute;xito digital.</p>
+						</div>
+					</div>
+				</div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-12 w-9/12 lg:w-11/12 max-w-4xl pb-16">
+					<div>
+						<figure class="flex justify-center items-center aspect-none md:aspect-square">
+							<img src="images/windows.webp" class="w-28 lg:w-full aspect-square" loading="lazy" alt="Servicio website">
+						</figure>
+						<div class="text-center">
+							<h3 class="mb-2 text-sky-600 text-3xl font-m font-bold">Website</h3>
+							<p class="text-blue-400 text-xs lg:text-base leading-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias fuga a sed quas quidem nisi officiis?</p>
+						</div>
+					</div>
+					<div>
+						<figure class="flex justify-center items-center aspect-none md:aspect-square">
+							<img src="images/windows.webp" class="w-28 lg:w-full aspect-square" loading="lazy" alt="Servicio Cloud">
+						</figure>
+						<div class="text-center">
+							<h3 class="mb-2 text-sky-600 text-3xl font-m font-bold">Cloud</h3>
+							<p class="text-blue-400 text-xs lg:text-base leading-5">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis quibusdam quia, natus est saepe temporibus qui dolorum vitae.</p>
+						</div>
+					</div>
+					<div>
+						<figure class="flex justify-center items-center aspect-none md:aspect-square">
+							<img src="images/windows.webp" class="w-28 lg:w-full aspect-square" loading="lazy" alt="Servicio Marketing">
+						</figure>
+						<div class="text-center">
+							<h3 class="mb-2 text-sky-600 text-3xl font-m font-bold">Marketing</h3>
+							<p class="text-blue-400 text-xs lg:text-base leading-5">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Empresas -->
+		<section class="relative w-full py-12 md:py-24 bg-[#00021f] z-[1]">
+			<img src="images/gradient-footer.webp" class="absolute w-full h-full top-0 right-0 bottom-0 left-0 -z-10" loading="lazy" alt="background Hantik">
+			<div
+				x-data="{}"
+				class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+				<ul x-ref="logos" class="flex items-center justify-center md:justify-start py-7 [&_li]:mx-8 [&_img]:max-w-none [&_img]:w-16 [&_img]:aspect-video [&_img]:object-contain animate-infinite-scroll">
+					<li>
+						<img src="images/logo-empresa/logo-acento.svg"   loading="lazy" alt="marca acento internacional">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-lkg.webp"     loading="lazy" alt="marca lkg logistica">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-soma.svg"     loading="lazy" alt="marca soma medical center">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-acento.svg"   loading="lazy" alt="marca acento internacional">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-lkg.webp"     loading="lazy" alt="marca lkg logistica">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-soma.svg"     loading="lazy" alt="marca soma medical center">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-acento.svg"   loading="lazy" alt="marca acento internacional">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-lkg.webp"     loading="lazy" alt="marca lkg logistica">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-soma.svg"     loading="lazy" alt="marca soma medical center">
+					</li>
+				</ul>
+			</div>
+			<div
+				x-data="{}"
+				class="w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-200px),transparent_100%)]">
+				<ul x-ref="logos" class="flex items-center justify-center md:justify-start py-7 [&_li]:mx-8 [&_img]:max-w-none [&_img]:w-16 [&_img]:aspect-video [&_img]:object-contain animate-infinite-scroll-reverse">
+					<li>
+						<img src="images/logo-empresa/logo-acento.svg"   loading="lazy" alt="marca acento internacional">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-lkg.webp"     loading="lazy" alt="marca lkg logistica">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-soma.svg"     loading="lazy" alt="marca soma medical center">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-acento.svg"   loading="lazy" alt="marca acento internacional">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-lkg.webp"     loading="lazy" alt="marca lkg logistica">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-soma.svg"     loading="lazy" alt="marca soma medical center">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-acento.svg"   loading="lazy" alt="marca acento internacional">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-lkg.webp"     loading="lazy" alt="marca lkg logistica">
+					</li>
+					<li>
+						<img src="images/logo-empresa/logo-soma.svg"     loading="lazy" alt="marca soma medical center">
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Opiniones cliente -->
+		<section
+			x-ref="opiniones"
+			class="relative flex flex-col justify-center items-center gap-y-12 py-12 bg-bluehantik-900"
+		>
+			<div>
+				<h3 class="text-white text-4xl font-m font-bold">Ellos opinan:</h3>
+			</div>
+			<div class="swiper opinion w-11/12 overflow-x-hidden z-[1]">
+				<div class="swiper-wrapper">
+					<!-- 1 -->
+					<!-- temporal video revisar -->
+					<div class="swiper-slide">
+						<div class="flex flex-col gap-y-6 p-4 bg-bluehantik-950">
+							<figure class="w-[6.25rem] rounded-full overflow-hidden">
+								<img src="images/avatar.webp" loading="lazy" alt="usuario">
+							</figure>
+							<div>
+								<span class="block text-white font-m font-bold text-2xl">Jorge Martinez</span>
+								<span class="text-cyan-400 text-xs lg:text-sm font-raleway">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsa incidunt ad autem perferendis eaque tenetur distinctio illo. Repellendus optio consectetur quidem eum. Qui?</span>
+							</div>
+						</div>
+					</div>
+					
+					<!-- * tarjeta de opicion json, cambiar -->
+					{
+						Opinions.map(({name, description, company, url}) => (
+							<CardOpinion>
+								{description},
+								{name},
+								{company}
+							</CardOpinion>
+						))
+					}
+				</div>
+			</div>
+		</section>
+
+		<section class="relative w-full overflow-hidden">
+			<img src="images/header.webp" class="absolute w-full h-full object-cover" loading="lazy" alt="background hantik">
+			<div class="relative flex justify-center items-center py-16">
+				<div class="flex flex-col md:flex-row justify-between gap-y-4 w-11/12">
+					<div class="flex flex-col justify-center items-start">
+						<h1 class="mb-5 text-white text-4xl md:text-7xl font-m font-bold">Ofrecemos<br>soluciones<br>digitales</h1>
+						<h2 class="mb-5 text-cyan-400 text-xl font-raleway">que impulsan el crecimiento empresarial</h2>
+						<div class="flex flex-col md:flex-row justify-start gap-4 w-full">
+							<div class="inline-flex justify-center items-center gap-x-3 max-w-xs py-4 px-8 text-white font-m font-semibold rounded-xl bg-gradient-to-r from-sky-700 to-cyan-400">
+								<span class="text-lg tracking-wider">Cont&aacute;ctanos</span>
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-50/50">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+								</svg>
+							</div>
+							<div class="inline-flex justify-center items-center gap-x-3 max-w-xs py-4 px-8 text-white font-m font-semibold rounded-xl border-2 border-cyan-400">
+								<span class="text-lg tracking-wider">Cont&aacute;ctanos</span>
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="flex justify-center items-center">
+						<picture>
+							<source
+								media="(orientation: portrait)"
+								srcset="images/mobil-m.webp"
+								sizes="(max-width: 767.9808px) 700px">
+							<img src="images/mobil.webp" class="max-h-[600px]" loading="lazy" alt="smartphone">
+						</picture>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- contenido faltante  -->
+		<!-- contenido faltante  -->
+
+		<!-- Big Data -->
+		<section class="relative">
+			<picture>
+				<source
+					media="(orientation: portrait)"
+					srcset="images/database-mobile.webp"
+					sizes="(max-width: 767.9808px) 700px">
+				<img src="images/database.webp" class="w-full h-auto" loading="lazy" alt="Gr&aacute;fico de datos">
+			</picture>
+			<div class="relative lg:absolute flex justify-center items-center top-0 right-0 bottom-0 left-0">
+				<div class="flex justify-end items-center w-11/12 h-full">
+					<div class="w-full lg:w-1/2">
+						<h2 class="mb-5 text-blue-600 lg:text-white text-4xl md:text-7xl font-m font-bold">Machine Big data</h2>
+						<p class="mb-5 text-blue-600 lg:text-cyan-200 text-xl font-raleway">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid asperiores natus quod ullam illo eos harum nulla explicabo, minima animi quisquam recusandae omnis neque amet cupiditate. Minus voluptates sunt fugiat.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="flex justify-center items-center bg-white py-24">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-11/12 text-center">
+				<article class="grid gap-y-6">
+					<figure class="flex justify-center">
+						<img src="images/machine-learning.svg" class="w-24 aspect-square object-contain" loading="lazy" alt="machine learing icon">
+					</figure>
+					<div>
+						<h3 class="mb-4 text-blue-600 text-2xl md:text-4xl font-m font-bold">Machine learning</h3>
+						<p class="text-blue-400 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut mollitia voluptates consectetur.</p>
+					</div>
+				</article>
+				<article class="grid gap-y-6">
+					<figure class="flex justify-center">
+						<img src="images/data-cluster.svg" class="w-24 aspect-square object-contain" loading="lazy" alt="Big Data">
+					</figure>
+					<div>
+						<h3 class="mb-4 text-blue-600 text-2xl md:text-4xl font-m font-bold">Big Data</h3>
+						<p class="text-blue-400 text-xs">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde temporibus obcaecati sapiente magni libero tenetur labore.</p>
+					</div>
+				</article>
+				<article class="grid gap-y-6">
+					<figure class="flex justify-center">
+						<img src="images/deep-learning.svg" class="w-24 aspect-square object-contain" loading="lazy" alt="Deep learning">
+					</figure>
+					<div>
+						<h3 class="mb-4 text-blue-600 text-2xl md:text-4xl font-m font-bold">Deep Learning</h3>
+						<p class="text-blue-400 text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam.</p>
+					</div>
+				</article>
+			</div>
+		</section>
+		<!-- Tecnologias tabs -->
+		<section
+			x-ref="tecnologia"
+			class="flex justify-center py-24 bg-bluehantik-900"
+		>
+			<div class="grid gap-y-12 w-4/5 max-w-7xl">
+				<article class="flex flex-col gap-y-4 text-center">
+					<h3 class="text-white text-5xl font-m font-bold">Tecnolog&iacute;as</h3>
+					<p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste.</p>
+				</article>
+				<div class="grid gap-y-6" x-data="{ activeTab:  0 }">
+					<div class="flex justify-center items-center gap-4 mb-12">
+						<label
+							@click="activeTab = 0"
+							:class="{ 'active text-white bg-bluehantik-500': activeTab === 0 }"
+							class="py-2 px-2 md:px-4 text-graycanvas-500 hover:text-white text-xs md:text-base cursor-pointer border border-bluehantik-800/50 hover:border-cyan-400 rounded-md"
+						>
+							Front-End
+						</label>
+						<label
+							@click="activeTab = 1"
+							:class="{ 'active text-white bg-bluehantik-500': activeTab === 1 }"
+							class="py-2 px-2 md:px-4 text-graycanvas-500 hover:text-white text-xs md:text-base cursor-pointer border border-bluehantik-800/50 hover:border-cyan-400 rounded-md"
+						>
+							Back-End
+						</label>
+						<label
+							@click="activeTab = 2"
+							:class="{ 'active text-white bg-bluehantik-500': activeTab === 2 }"
+							class="py-2 px-2 md:px-4 text-graycanvas-500 hover:text-white text-xs md:text-base cursor-pointer border border-bluehantik-800/50 hover:border-cyan-400 rounded-md"
+						>
+							Bases de datos
+						</label>
+					</div>
+					<!-- Frontend -->
+					<div 
+						:class="{ 'active': activeTab === 0 }" x-show.transition.in.opacity.duration.600="activeTab === 0"
+						class="mx-auto w-full max-w-4xl"
+					>
+						<div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 items-stretch">
+							<div class="flex justify-center items-center p-2 rounded-lg bg-bluehantik-950">
+								<svg viewBox="0 0 248 31" class="text-slate-900 dark:text-white w-auto h-5">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M25.517 0C18.712 0 14.46 3.382 12.758 10.146c2.552-3.382 5.529-4.65 8.931-3.805 1.941.482 3.329 1.882 4.864 3.432 2.502 2.524 5.398 5.445 11.722 5.445 6.804 0 11.057-3.382 12.758-10.145-2.551 3.382-5.528 4.65-8.93 3.804-1.942-.482-3.33-1.882-4.865-3.431C34.736 2.92 31.841 0 25.517 0zM12.758 15.218C5.954 15.218 1.701 18.6 0 25.364c2.552-3.382 5.529-4.65 8.93-3.805 1.942.482 3.33 1.882 4.865 3.432 2.502 2.524 5.397 5.445 11.722 5.445 6.804 0 11.057-3.381 12.758-10.145-2.552 3.382-5.529 4.65-8.931 3.805-1.941-.483-3.329-1.883-4.864-3.432-2.502-2.524-5.398-5.446-11.722-5.446z" fill="#38bdf8"></path>
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M76.546 12.825h-4.453v8.567c0 2.285 1.508 2.249 4.453 2.106v3.463c-5.962.714-8.332-.928-8.332-5.569v-8.567H64.91V9.112h3.304V4.318l3.879-1.143v5.937h4.453v3.713zM93.52 9.112h3.878v17.849h-3.878v-2.57c-1.365 1.891-3.484 3.034-6.285 3.034-4.884 0-8.942-4.105-8.942-9.389 0-5.318 4.058-9.388 8.942-9.388 2.801 0 4.92 1.142 6.285 2.999V9.112zm-5.674 14.636c3.232 0 5.674-2.392 5.674-5.712s-2.442-5.711-5.674-5.711-5.674 2.392-5.674 5.711c0 3.32 2.442 5.712 5.674 5.712zm16.016-17.313c-1.364 0-2.477-1.142-2.477-2.463a2.475 2.475 0 012.477-2.463 2.475 2.475 0 012.478 2.463c0 1.32-1.113 2.463-2.478 2.463zm-1.939 20.526V9.112h3.879v17.849h-3.879zm8.368 0V.9h3.878v26.06h-3.878zm29.053-17.849h4.094l-5.638 17.849h-3.807l-3.735-12.03-3.771 12.03h-3.806l-5.639-17.849h4.094l3.484 12.315 3.771-12.315h3.699l3.734 12.315 3.52-12.315zm8.906-2.677c-1.365 0-2.478-1.142-2.478-2.463a2.475 2.475 0 012.478-2.463 2.475 2.475 0 012.478 2.463c0 1.32-1.113 2.463-2.478 2.463zm-1.939 20.526V9.112h3.878v17.849h-3.878zm17.812-18.313c4.022 0 6.895 2.713 6.895 7.354V26.96h-3.878V16.394c0-2.713-1.58-4.14-4.022-4.14-2.55 0-4.561 1.499-4.561 5.14v9.567h-3.879V9.112h3.879v2.285c1.185-1.856 3.124-2.749 5.566-2.749zm25.282-6.675h3.879V26.96h-3.879v-2.57c-1.364 1.892-3.483 3.034-6.284 3.034-4.884 0-8.942-4.105-8.942-9.389 0-5.318 4.058-9.388 8.942-9.388 2.801 0 4.92 1.142 6.284 2.999V1.973zm-5.674 21.775c3.232 0 5.674-2.392 5.674-5.712s-2.442-5.711-5.674-5.711-5.674 2.392-5.674 5.711c0 3.32 2.442 5.712 5.674 5.712zm22.553 3.677c-5.423 0-9.481-4.105-9.481-9.389 0-5.318 4.058-9.388 9.481-9.388 3.519 0 6.572 1.82 8.008 4.605l-3.34 1.928c-.79-1.678-2.549-2.749-4.704-2.749-3.16 0-5.566 2.392-5.566 5.604 0 3.213 2.406 5.605 5.566 5.605 2.155 0 3.914-1.107 4.776-2.749l3.34 1.892c-1.508 2.82-4.561 4.64-8.08 4.64zm14.472-13.387c0 3.249 9.661 1.285 9.661 7.89 0 3.57-3.125 5.497-7.003 5.497-3.591 0-6.177-1.607-7.326-4.177l3.34-1.927c.574 1.606 2.011 2.57 3.986 2.57 1.724 0 3.052-.571 3.052-2 0-3.176-9.66-1.391-9.66-7.781 0-3.356 2.909-5.462 6.572-5.462 2.945 0 5.387 1.357 6.644 3.713l-3.268 1.82c-.647-1.392-1.904-2.035-3.376-2.035-1.401 0-2.622.607-2.622 1.892zm16.556 0c0 3.249 9.66 1.285 9.66 7.89 0 3.57-3.124 5.497-7.003 5.497-3.591 0-6.176-1.607-7.326-4.177l3.34-1.927c.575 1.606 2.011 2.57 3.986 2.57 1.724 0 3.053-.571 3.053-2 0-3.176-9.66-1.391-9.66-7.781 0-3.356 2.908-5.462 6.572-5.462 2.944 0 5.386 1.357 6.643 3.713l-3.268 1.82c-.646-1.392-1.903-2.035-3.375-2.035-1.401 0-2.622.607-2.622 1.892z" fill="white"></path>
+								</svg>
+							</div>
+							<div class="flex justify-center p-2 rounded-lg bg-bluehantik-950">
+								<img src="images/front-end/javascript.svg" loading="lazy" alt="">
+							</div>
+							<div class="flex justify-center p-2 rounded-lg bg-bluehantik-950">
+								<img src="images/front-end/Next.svg" loading="lazy" alt="Nextjs">
+							</div>
+							<div class="flex justify-center p-2 rounded-lg bg-bluehantik-950">
+								<img src="images/front-end/react.svg" loading="lazy" alt="react">
+							</div>
+						</div>
+					</div>
+					<!-- Backend -->
+					<div
+						:class="{ 'active': activeTab === 1 }"
+						x-show.transition.in.opacity.duration.600="activeTab === 1"
+						class="mx-auto w-full max-w-2xl"
+					>
+						<div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 items-center">
+							<div class="flex justify-center p-2 rounded-lg bg-bluehantik-950">
+								<img src="images/back-end/node.svg" loading="lazy" alt="Node JS">
+							</div>
+							<div class="flex justify-center p-2 rounded-lg bg-bluehantik-950">
+								<img src="images/back-end/php.svg" loading="lazy" alt="Php">
+							</div>
+							<div class="flex justify-center p-2 rounded-lg bg-bluehantik-950">
+								<img src="images/back-end/graphql.svg" loading="lazy" alt="Graphql">
+							</div>
+						</div>
+					</div>
+					<!-- Bases de datos -->
+					<div
+						:class="{ 'active': activeTab === 2 }"
+						x-show.transition.in.opacity.duration.600="activeTab === 2"
+						class="mx-auto w-full max-w-4xl"
+					>
+						<div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4 items-center">
+							<div class="flex justify-center p-2 rounded-lg bg-bluehantik-950">
+								<img src="images/db/mongodb.svg" loading="lazy" alt="Mongodb">
+							</div>
+							<div class="flex justify-center p-2 rounded-lg bg-bluehantik-950">
+								<img src="images/db/mysql.svg" loading="lazy" alt="mysql">
+							</div>
+							<div class="flex justify-center p-2 rounded-lg bg-bluehantik-950">
+								<img src="images/db/postgre.svg" loading="lazy" alt="postgre">
+							</div>
+							<div class="flex justify-center p-2 rounded-lg bg-bluehantik-950">
+								<img src="images/db/sqlite.svg" loading="lazy" alt="sqlite">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section 
+			x-ref="formulario"
+			class="relative flex justify-center items-center py-12 md:py-0 bg-gradient-to-r from-[#226ebd] to-[#41b4e6]"
+		>
+			<!-- ! elemento img genera el tamaño del div, reemplazar -->
+			<img src="images/gradient-header.webp" class="hidden md:block w-full h-full object-cover" loading="lazy" alt="Fondo">
+
+			<div class="relative md:absolute flex justify-center items-center top-0 right-0 bottom-0 left-0">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-12 w-11/12 max-w-7xl">
+					<div class="flex flex-col items-center md:items-start gap-y-6">
+						<h3 class="text-white text-3xl md:text-5xl text-center lg:text-left font-m font-bold">Lorem ipsum dolor sit amet.</h3>
+						<p class="text-white/70 lg:text-cyan-400 text-base max-w-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae iusto dolore repellendus iure quod maxime culpa soluta a, dignissimos, expedita quam ratione cum neque consequuntur nisi vel? Vero dolore quaerat id perferendis.</p>
+					</div>
+					<div>
+						<form id="form" class="flex flex-col gap-y-4">
+							<input type="text" name="name"      class="p-4 text-xs lg:text-base rounded-lg bg-white shadow-xl shadow-sky-700/50" placeholder="Nombre Completo">
+							<input type="text" name="email"     class="p-4 text-xs lg:text-base rounded-lg bg-white shadow-xl shadow-sky-700/50" placeholder="Correo Electr&oacute;nico">
+							<input type="text" name="company"   class="p-4 text-xs lg:text-base rounded-lg bg-white shadow-xl shadow-sky-700/50" placeholder="Empresa o Compa&ntilde;&iacute;a">
+							<textarea name="message" class="p-4 text-xs lg:text-base rounded-lg resize-none bg-white shadow-xl shadow-sky-700/50" placeholder="Escribe tu Mensaje"></textarea>
+							<button class="group relative inline-flex justify-center items-center gap-x-3 hover:gap-x-6 py-4 px-8 text-white font-m font-semibold cursor-pointer rounded-lg bg-sky-400 shadow-2xl shadow-sky-700/50 duration-300" aria-label="Env&iacute;ar formulario">
+								<span>Env&iacute;ar solicitud</span>
+								<div class="group relative w-6 h-6">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute bottom-0 left-0 w-6 h-6 opacity-100 group-hover:opacity-0">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z" />
+									</svg>
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute bottom-0 left-0 w-6 h-6 opacity-0 group-hover:opacity-100 translate-y-[2px]">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+									</svg>
+								</div>
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</Layout>
