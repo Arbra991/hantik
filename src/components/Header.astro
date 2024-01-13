@@ -1,5 +1,7 @@
 ---
 import LogoMain from "../components/LogoMain.astro";
+
+import ButtonMenu from "../components/ButtonMenu";
 ---
 <style>
     [x-cloak] { display: none !important; }
@@ -13,12 +15,16 @@ import LogoMain from "../components/LogoMain.astro";
         class="relative hidden md:flex justify-between items-center w-3/4 lg:w-1/2 px-8 py-4 rounded-full backdrop-blur-md duration-500"
     >
         <menu class="flex justify-start gap-x-4 lg:gap-x-8 text-white">
-            <li
+            <ButtonMenu 
+                onclick="#servicios"
+                ref="#servicios"
+            />
+            <!-- <li
                 class="cursor-pointer" 
                 @click="$refs.servicios.scrollIntoView({ behavior: 'smooth'})"
             >
                 Portafolio
-            </li>
+            </li> -->
             <li
                 class="cursor-pointer"
                 @click="$refs.servicios.scrollIntoView({ behavior: 'smooth'})"

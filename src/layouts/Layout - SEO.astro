@@ -1,0 +1,93 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+// Supports weights 100-900
+import '@fontsource-variable/raleway';
+
+import { SEO } from "astro-seo";
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth antialiased">
+	<head>
+        <SEO
+            title="{title}"
+            description="Ofrecemos soluciones digitales que ayudan a las empresas a cumplir con las regulaciones, mejorar su rendimiento, proteger sus datos y alcanzar sus objetivos."
+            openGraph={{
+                basic: {
+                    title:  string;
+                    type:   string;
+                    image:  string;
+                    url:    string;
+                }
+            }}
+            twitter={{
+                creator: "@hantik"
+            }}
+            extend={{
+                // extending the default link tags
+                link: [{ rel: "icon", href: "/favicon.ico" }],
+                // extending the default meta tags
+                meta: [
+                {
+                    name: "twitter:image",
+                    content: "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+                },
+                { name: "twitter:title", content: "Tinker Tailor Soldier Spy" },
+                { name: "twitter:description", content: "Agent" },
+                ],
+            }}
+        />
+		<meta charset="UTF-8" />
+		<title>{title}</title>
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="geo.region" content="CO-VAC" />
+        <meta name="geo.placename" content="Cali" />
+        <meta name="geo.position" content="3.4516;-76.5320" />
+        <meta name="ICBM" content="3.4516;-76.5320">
+        <link rel="canonical" href="https://www.hantikgroup.com">
+        <meta name="description" content="Ofrecemos soluciones digitales que ayudan a las empresas a cumplir con las regulaciones, mejorar su rendimiento, proteger sus datos y alcanzar sus objetivos.">
+        <meta name="keywords" content="hantik,hantik group,diseño web,diseño website,diseño,diseño de apps,diseño de interface,diseño de landing page,landing page,cloup,marketing,marketing digital,social media,redes sociales">
+        <meta name="title" content="Hantik Group">
+		<meta name="author"	content="Hantik">
+        <meta name="thumbnail" content=""/>
+        <!--<meta name="aplication-name" content=""> -->
+        <!--<meta name="subject" content="">-->
+        <!--<meta name="classification" content="">-->
+        <meta property="og:locale" content="en_ES"/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="Hantik Group"/>
+        <meta property="og:description" content="Ofrecemos soluciones digitales que ayudan a las empresas a cumplir con las regulaciones, mejorar su rendimiento, proteger sus datos y alcanzar sus objetivos."/>
+        <meta property="og:site_name" content="Hantik Group">
+        <meta property="og:url" content="https://www.hantikgroup.com"/>
+        <meta property="og:image" content="https://www.hantikgroup.com/dist/images"/>
+        <meta property="og:image:secure_url" content="https://www.hantikgroup.com/dist/images"/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+        <meta property="og:image" content="https://www.hantikgroup.com/dist/images"/>
+        <meta property="og:image:secure_url" content="https://www.hantikgroup.com/dist/images"/>
+        <meta property="og:image:width" content="200"/>
+        <meta property="og:image:height" content="200"/>
+        <meta property="og:image:alt" content="Hantik Group"/>
+	</head>
+	<body
+		x-data="{ openMenu : false, scrollTo: '' }"
+		class="font-raleway"
+	>
+		<Header />
+		<slot />
+		<Footer />
+	</body>
+</html>

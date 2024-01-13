@@ -1,10 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
 import GeneralButton from '../components/GeneralButton.astro';
-import CardOpinion from '../components/CardOpinion.astro';
-import Opinions from "../components/opinion.json";
+import LineButton from '../components/LineButton.astro';
 
+import SwiperOpinion from '../components/CarrouselOpinion';
 ---
 
 <Layout title="Hantik Group">
@@ -76,6 +75,7 @@ import Opinions from "../components/opinion.json";
 		<!-- servicios -->
 		<section 
 			x-ref="servicios"
+			id="servicios"
 			class="relative bg-white"
 		>
 			<div class="flex flex-col justify-center items-center gap-y-12 top-0 right-0 bottom-0 left-0 z-[1]">
@@ -206,34 +206,8 @@ import Opinions from "../components/opinion.json";
 			<div>
 				<h3 class="text-white text-4xl font-m font-bold">Ellos opinan:</h3>
 			</div>
-			<div class="swiper opinion w-11/12 overflow-x-hidden z-[1]">
-				<div class="swiper-wrapper">
-					<!-- 1 -->
-					<!-- temporal video revisar -->
-					<div class="swiper-slide">
-						<div class="flex flex-col gap-y-6 p-4 bg-bluehantik-950">
-							<figure class="w-[6.25rem] rounded-full overflow-hidden">
-								<img src="images/avatar.webp" loading="lazy" alt="usuario">
-							</figure>
-							<div>
-								<span class="block text-white font-m font-bold text-2xl">Jorge Martinez</span>
-								<span class="text-cyan-400 text-xs lg:text-sm font-raleway">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem ipsa incidunt ad autem perferendis eaque tenetur distinctio illo. Repellendus optio consectetur quidem eum. Qui?</span>
-							</div>
-						</div>
-					</div>
-					
-					<!-- * tarjeta de opicion json, cambiar -->
-					{
-						Opinions.map(({name, description, company, url}) => (
-							<CardOpinion>
-								{description},
-								{name},
-								{company}
-							</CardOpinion>
-						))
-					}
-				</div>
-			</div>
+
+			<SwiperOpinion client:load />
 		</section>
 
 		<section class="relative w-full overflow-hidden">
@@ -244,18 +218,12 @@ import Opinions from "../components/opinion.json";
 						<h1 class="mb-5 text-white text-4xl md:text-7xl font-m font-bold">Ofrecemos<br>soluciones<br>digitales</h1>
 						<h2 class="mb-5 text-cyan-400 text-xl font-raleway">que impulsan el crecimiento empresarial</h2>
 						<div class="flex flex-col md:flex-row justify-start gap-4 w-full">
-							<div class="inline-flex justify-center items-center gap-x-3 max-w-xs py-4 px-8 text-white font-m font-semibold rounded-xl bg-gradient-to-r from-sky-700 to-cyan-400">
-								<span class="text-lg tracking-wider">Cont&aacute;ctanos</span>
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-slate-50/50">
-									<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-								</svg>
-							</div>
-							<div class="inline-flex justify-center items-center gap-x-3 max-w-xs py-4 px-8 text-white font-m font-semibold rounded-xl border-2 border-cyan-400">
-								<span class="text-lg tracking-wider">Cont&aacute;ctanos</span>
-								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-									<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-								</svg>
-							</div>
+							<GeneralButton>
+								Cont&aacute;ctanos
+							</GeneralButton>
+							<LineButton>
+								Cont&aacute;ctanos
+							</LineButton>
 						</div>
 					</div>
 					<div class="flex justify-center items-center">
@@ -427,7 +395,7 @@ import Opinions from "../components/opinion.json";
 			x-ref="formulario"
 			class="relative flex justify-center items-center py-12 md:py-0 bg-gradient-to-r from-[#226ebd] to-[#41b4e6]"
 		>
-			<!-- ! elemento img genera el tamaño del div, reemplazar -->
+			<!-- ! elemento img genera el tama&ntilde;o del div, reemplazar -->
 			<img src="images/gradient-header.webp" class="hidden md:block w-full h-full object-cover" loading="lazy" alt="Fondo">
 
 			<div class="relative md:absolute flex justify-center items-center top-0 right-0 bottom-0 left-0">

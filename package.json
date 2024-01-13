@@ -12,13 +12,17 @@
   "dependencies": {
     "@astrojs/alpinejs": "^0.3.2",
     "@astrojs/check": "^0.4.1",
-    "@astrojs/preact": "^3.1.0",
+    "@astrojs/react": "^3.0.9",
+    "@astrojs/sitemap": "^3.0.4",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/raleway": "^5.0.17",
     "@types/alpinejs": "^3.13.6",
     "alpinejs": "^3.13.3",
     "astro": "^4.1.2",
-    "preact": "^10.19.3",
+    "astro-seo": "^0.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "swiper": "^11.0.5",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   }
